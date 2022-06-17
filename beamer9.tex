@@ -1,0 +1,61 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\title{Assignment 9 : Papoulis Textbook }
+\author{Akshitha Kola}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+\usepackage{amsmath}
+\setbeamertemplate{caption}[numbered]{}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+\logo{}
+
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+\section{Question}
+\begin{frame}{Question}
+    \begin{block}{Chapter 9 Exercise 9.54}
+     The process x[n] is WSS with$ R_{xx}[m] = 5\delta [m]$ and 
+     \begin{align}
+     y[n]- 0.5y[n - 1] = x[n] 
+     \end{align} 
+Find $E\lbrace y^{2}[n]\rbrace, R_{xy}[m_{1}, m_{2}],  R_{yy}[m_{1}, m_{2}]$ (a) if (1) holds for all n. (b) if $y[-1] = 0$ and 
+(1) holds for $n \geq 0$.
+\end{block}
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+\frametitle{Solution}
+\begin{enumerate}[label=\alph{enumii}) , start = 1]
+\begin{align}
+        y[n] &= x[n]*h[n]     \nonumber \\
+        h[n] &= 2^{-n}U[n] \nonumber\\
+        E\lbrace y^{2}[n] &= 5*2^{-2n}U[n] = 0 \nonumber\\
+  \item {R_{xy}[m_{1},m_{2}]&= 5\delta [m_{1} - m_{2}]*2^{-m_{2}}U[m_{2}]\nonumber\\
+        &= 5\times 2^{-(m_{2}-m_{1})}U[m_{2}-m_{1}]\nonumber\\
+        R_{yy}[m_{1},m_{2}]&= 5\times 2^{-(m_{2}-m_{1})}U[m_{2}-m_{1}\times 2^{-m_{1}}U[m_{1}]\nonumber\\
+        &= \frac{20}{3}\times 2^{-(m_{1}-m_{2})}\nonumber}
+\end{align}
+\end{frame}
+\begin{frame}
+       For $m_{1}$ or $m_{2} < 0$ $ R_{xy}[m_{1}, m_{2}] =  R_{yy}[m_{1}, m_{2}] = 0$
+       \begin{align}
+   \item { R_{xy}[m_{1}, m_{2}] &= 5\delta (m_{1} - m_{2})*2^{-m_{2}} = 5*2^{-m_{2}} \nonumber\\
+        R_{yy}[m_{1}, m_{2}] &= \sum_{k=0}^{m_{1}}5\times  2^{-(m_{2}-k)}2^{-(m_{1}-k)}\nonumber\\
+        & = \frac{5}{3}\times 2^{-(m_{2}-m_{1})}(4 - 2^{-2m_{1}})\nonumber}
+        \end{align}
+\end{enumerate}
+        \end{frame}
+       \end{document}
